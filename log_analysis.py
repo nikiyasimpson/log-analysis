@@ -62,13 +62,10 @@ def print_table(title, table, descriptor):
     print("\n")
 
 
-def main():
+if __name__ == '__main__':
     """ Main Function that prints summary output to screen """
     print("Log Analysis Summary" + "\n")
     get_top_articles()
     get_top_authors()
     get_error_percents()
     print("End of Report")
-
-
-main()
