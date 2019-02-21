@@ -65,7 +65,7 @@ To install: `pip install psycopg2-binary`
 For  more information on PostgreSQL install visit the [documentation](http://initd.org/psycopg/docs/install.html)
 
 #### To run code
-To run summary report: `python3 newsdb.py > log_analysis.txt`
+To run summary report: `python3 log_analysis.py > log_analysis.txt`
 
 ## Summary Includes
 1. What are the most popular three articles of all time? Which articles have been accessed the most? Data is presented as a sorted list with the most popular article at the top.
