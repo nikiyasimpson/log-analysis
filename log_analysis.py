@@ -57,8 +57,7 @@ def print_table(title, table, descriptor):
     """ This function prints a summary table for query results """
 
     print(title + "\n")
-    for row in table:
-        description, value = row
+    for description, value in table:
         print('\t{} - {} {}'.format(description, value, descriptor))
     print("\n")
 
