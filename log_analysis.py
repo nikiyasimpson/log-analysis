@@ -4,10 +4,15 @@ import psycopg2
 
 # This function connects to the database and returns the results from query
 def run_query(query):
+
     conn = psycopg2.connect("dbname=news")
     c = conn.cursor()
-    c.execute(query)
-    return c.fetchall()
+    try:
+        c.execute(query)
+        return c.fetchall()
+    except psycopg2.Error as e:
+        pass
+    print(e.pgerror)
 
 
 # Print the top performing article views
