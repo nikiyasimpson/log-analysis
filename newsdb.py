@@ -14,7 +14,7 @@ def get_top_articles():
 
     query = "select title, count(log.id) as num_log from articles " \
             "left join log on '/article/'||articles.slug " \
-            "= log.path group by title order by num_log desc"
+            "= log.path group by title order by num_log desc limit 3"
 
     results = run_query(query)
     print_table("Top Articles", results, "views")

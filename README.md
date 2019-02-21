@@ -8,3 +8,6 @@ create view LOG_STATUS_SUMMARY_VIEW as select date(time), SUM(case when  status 
 
 ##How to Run
 python3 newsdb.py > log_analysis.txt
+
+## Summary Includes
+1. What are the most popular three articles of all time? Which articles have been accessed the most? Present this information as a sorted list with the most popular article at the top.
