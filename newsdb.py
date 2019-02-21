@@ -12,9 +12,9 @@ def run_query(query):
 # Print the top performing article views
 def get_top_articles():
 
-    query = "select title, count(log.id) as num_log from articles " \
+    query = "select title, count(log.id) as views from articles " \
             "left join log on '/article/'||articles.slug " \
-            "= log.path group by title order by num_log desc limit 3"
+            "= log.path group by title order by views desc limit 3"
 
     results = run_query(query)
     print_table("Top Articles", results, "views")
@@ -23,10 +23,10 @@ def get_top_articles():
 # Print the top authors with the most views
 def get_top_authors():
 
-    query = "select name, count(log.id) as num_log from articles " \
+    query = "select name, count(log.id) as views from articles " \
             "join authors on articles.author = authors.id " \
             "left join log on '/article/'||articles.slug = "\
-            "log.path group by name order by num_log desc"
+            "log.path group by name order by views desc"
 
     results = run_query(query)
     print_table("Top Authors", results, "views")
